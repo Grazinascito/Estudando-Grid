@@ -16,7 +16,9 @@ a{
 }
 
 img{
-    max-width: 100px;
+    max-width: 100%;
+    display: block;
+    border-radius: 5px;
 }
 
 /* grid geral */
@@ -31,23 +33,225 @@ img{
  ;
 }
 
+/* HEADER */
+
 .header{
     grid-area: header;
+    background: linear-gradient(135deg,#8844ee, #B07DFB);
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  
 }
+
+.logo{
+    max-width: 200px;
+}
+
+.header nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.header nav a{
+    display: block;
+    padding: 10px;
+    color: white;
+    font-size: 1.125em;
+    background: rgba(0,0,0, .1);
+    border-radius: 5px;
+    transition: 0.2s;
+  
+}
+
+.header nav a:hover{
+    background: rgba(0,0,0, .5);
+}
+
+.header li + li{ 
+    /* O li + li significa que o margin não vai ser aplicado no primeiro li, ele só irá aplicar  o margin do primeiro em diante*/
+    margin-left: 30px;
+}
+
+/* SIDENAV */
 
 .sidenav{
     grid-area: sidenav;
+    background: #fafbfc;
+    padding: 30px;
 }
 
+.sidenav li a{
+    display: block;
+    min-width: 60px;
+    max-width: 100px;
+    margin: 0 auto 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px 0px rgba(44,44,44,0.15);
+    transition: .1s ease-out;
+}
+
+.sidenav li a:hover{
+    background: #B07DFB;
+    
+}
+/* CONTENT */
 .content-main{
 
- grid-area: contentmain;
+     grid-area: contentmain;
+     max-width: 900px;
+     margin: 0 auto;
+     border: solid red 1px;
+     padding: 30px;
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 30px;
 }
 
+
+.col-wide{
+    grid-column: 1/-1;
+}
+
+.imagem-1{
+    grid-row: span 2;
+    align-self: end;
+}
+ /* .item-2{
+    align-self: end;
+} */
+
+/* GENERAL STYLE */
+
+p{
+    font-size: 1.2em;
+    line-height: 1.6;
+    letter-spacing: -0.005em;
+    color: rgba(0,0,0,.7);
+}
+
+.information p + p{
+    margin-top: 30px;
+}
+
+/* TITLE */
+
+.title{
+    color: #B07DFB;
+}
+
+.title h1{
+    font-size: 3.75em;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.title span{
+    font-size: 0.87em;
+    font-style: italic;
+}
+
+/* technical-features */
+
+.technical-features{
+    display: flex;
+    align-items: flex-start;
+}
+
+.technical-features span{
+    display: block;
+    color: #B07DFB;
+}
+
+.technical-features > div {
+    width: 80px;
+    border: red solid 1px;
+    text-align: center;
+    background: linear-gradient(135deg, #8844ee, #B07DFB);
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px 0px rgba(44,44,44,0.15);
+    position: relative;
+}
+
+.technical-features > div:first-child{
+    margin-right: 30px;
+}
+
+.number{
+ 
+    font-size: 3em;
+    line-height: 1;
+    margin: 10px auto;
+}
+
+.label{
+    background: white;
+    border-radius: 0 0 5px 5px;
+    padding: 5px 0;
+    position: relative;
+    top: 2px;
+    
+}
+
+.Spotlight{
+    font-size: 0.875em;
+    color: #B07DFB;
+    max-width: 16em;
+}
+
+.quote, .atributes{
+    align-self: end;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px 0px rgba(44,44,44,0.15);
+    background:linear-gradient(135deg, #8844ee, #B07DFB);
+    
+}
+
+.quote p{
+    font-size: 1.5em;
+    font-style: italic;
+    text-align: center;
+    color: white;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.atributes li{
+    color: white;
+    font-family: Courier, monospace;
+    font-size: 1.125em;
+    padding: 15px;
+    
+}
+
+.atributes li + li{
+    border-top: 2px solid #B07DFB;
+}
+
+
+/* ANUNCIOS */
 .anouncement{
     grid-area: anouncement;
+    background: #fafbfc;
+    display: grid;
+    align-content: start;
+    padding: 30px;
+    grid-gap: 30px;
 }
-
+/* FOOTER */
 .footer{
     grid-area: footer;
+    
+    background: linear-gradient(135deg,#8844ee, #B07DFB);
+}
+
+.footer p{
+    color: white;
+    text-align: center;
+    padding: 30px;
 }
